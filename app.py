@@ -66,8 +66,7 @@ def predict():
             data['ca'],
             data['thal']
         ]).reshape(1, -1)
-
-        prediction = model.predict([input_data])[0]
+        prediction = model.predict(input_data)[0]
 
         return jsonify({
             "result": int(prediction)
